@@ -11,7 +11,7 @@ HASH=e15dda82fe2fe8139dc2ac21a36d4ca01d5313c75f99f46c4e8a27709b7294bf
 if ! [ -e ${SRC_ARCHIVE} ]; then
     curl -L -O ${URL}
 fi
-ACTUAL_HASH=`/usr/bin/shasum -a 256 ${SRC_ARCHIVE}  | cut -f 1 -d' '`
+ACTUAL_HASH=`/usr/bin/sha256sum ${SRC_ARCHIVE}  | cut -f 1 -d' '`
 if [[ ${ACTUAL_HASH} != ${HASH} ]]; then
     echo Invalid hash value for ${SRC_ARCHIVE}
     exit 1
