@@ -2,3 +2,10 @@
 *.o
 *.tgz
 *.tar.gz
+*.sha1
+OpenSSL/openssl-*
+Sqlite/sqlite-*
+TclTk/Tcl
+TclTk/Tk
+Python/Python-*
+app_root

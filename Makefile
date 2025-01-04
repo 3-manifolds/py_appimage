@@ -1,8 +1,8 @@
 PYTHON_VERSION=3.13
 
-all: Setup OpenSSL TclTk Sqlite Python
+all: Setup OpenSSL TclTk Sqlite Python Smaller
 
-.PHONY: Setup OpenSSL TclTk Sqlite Python Tarball 
+.PHONY: Setup OpenSSL TclTk Sqlite Python Smaller Tarball 
 
 Setup:
 	rm -rf app_root
@@ -19,17 +19,17 @@ Sqlite:
 	bash Sqlite/build_sqlite3.sh
 
 Python:
-	bash Python-${PYTHON_VERSION}/build_python.sh
+	bash Python/build_python.sh
+
+Smaller:
+	find app_root -name '*.a' -delete
+	rm -rf app_root/lib/python3.13/lib/test
+	rm -f app_root/lib/python3.13/lib-dynload/_test*
+	rm -rf app_root/lib/python3.13/idlelib
+	rm -f app_root/bin/idle*
+	rm -rf app_root/share
 
 Tarball:
 	tar cfz app_root-${PYTHON_VERSION}.tgz app_root
 	shasum app_root-${PYTHON_VERSION}.tgz > app_root-${PYTHON_VERSION}.sha1 
 
-### Need to install snappy inside the app root before running this
-SnapPyApp:
-	find app_root -name '*.a' -delete
-	rm -rf app_root/lib/python3.13/test
-	rm -rf app_root/lib/python3.13/idlelib/
-	cp app_files/* app_root
-	mv app_root SnapPy-3.2a-x86_64.AppDir
-	bin/appimagetool SnapPy-3.2a-x86_64.AppDir
