@@ -31,5 +31,5 @@ Smaller:
 
 Tarball:
 	tar cfz app_root-${PYTHON_VERSION}.tgz app_root
-	shasum app_root-${PYTHON_VERSION}.tgz > app_root-${PYTHON_VERSION}.sha1 
+	sha256sum app_root-${PYTHON_VERSION}.tgz > app_root-${PYTHON_VERSION}.sha1 
 
