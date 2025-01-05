@@ -40,5 +40,5 @@ DockerFix2014:
 
 Tarball:
 	tar cfz app_root-${PYTHON_VERSION}.tgz app_root
-	sha256sum app_root-${PYTHON_VERSION}.tgz > app_root-${PYTHON_VERSION}.sha1 
+	sha256sum app_root-${PYTHON_VERSION}.tgz > app_root-${PYTHON_VERSION}.sha256 
 
