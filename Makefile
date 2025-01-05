@@ -1,6 +1,6 @@
 PYTHON_VERSION=3.13
 
-all: Setup OpenSSL TclTk Sqlite Python Smaller
+all: Setup OpenSSL TclTk Sqlite Python Smaller DockerFix
 
 .PHONY: Setup OpenSSL TclTk Sqlite Python Smaller DockerFix Tarball 
 
