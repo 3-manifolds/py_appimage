@@ -29,6 +29,15 @@ Smaller:
 	rm -f app_root/bin/idle*
 	rm -rf app_root/share
 
+DockerFix2014:
+	cp /usr/lib64/libncursesw.so.5.9 app_root/lib64
+	ln -s libncursesw.so.5.9 app_root/lib64/libncursesw.so
+	ln -s libncursesw.so.5.9 app_root/lib/libncursesw.so.5
+	cp /usr/lib64/libtinfo.so.5.9 app_root/lib64
+	ln -s libtinfo.so.5.9 app_root/lib64/libtinfo.so.5
+	ln -s libtinfo.so.5.9 app_root/lib64/libtinfo.so
+	patchelf --add-rpath '$ORIGIN/../..' app_root/lib/python3.13/lib-dynload/_curses.cpython-313-x86_64-linux-gnu.so
+
 Tarball:
 	tar cfz app_root-${PYTHON_VERSION}.tgz app_root
 	sha256sum app_root-${PYTHON_VERSION}.tgz > app_root-${PYTHON_VERSION}.sha1 
