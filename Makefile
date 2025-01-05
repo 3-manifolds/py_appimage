@@ -2,7 +2,7 @@ PYTHON_VERSION=3.13
 
 all: Setup OpenSSL TclTk Sqlite Python Smaller
 
-.PHONY: Setup OpenSSL TclTk Sqlite Python Smaller Tarball 
+.PHONY: Setup OpenSSL TclTk Sqlite Python Smaller DockerFix Tarball 
 
 Setup:
 	rm -rf app_root
@@ -29,7 +29,7 @@ Smaller:
 	rm -f app_root/bin/idle*
 	rm -rf app_root/share
 
-DockerFix2014:
+DockerFix:
 	cp /usr/lib64/libncursesw.so.5.9 app_root/lib64
 	ln -s libncursesw.so.5.9 app_root/lib64/libncursesw.so
 	ln -s libncursesw.so.5.9 app_root/lib/libncursesw.so.5
