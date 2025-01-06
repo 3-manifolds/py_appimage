@@ -36,7 +36,7 @@ DockerFix:
 	cp /usr/lib64/libtinfo.so.5.9 app_root/lib64
 	ln -s libtinfo.so.5.9 app_root/lib64/libtinfo.so.5
 	ln -s libtinfo.so.5.9 app_root/lib64/libtinfo.so
-	patchelf --add-rpath '$ORIGIN/../..' app_root/lib/python3.13/lib-dynload/_curses.cpython-313-x86_64-linux-gnu.so
+	patchelf --add-rpath '$$ORIGIN/../..' app_root/lib/python3.13/lib-dynload/_curses.cpython-313-x86_64-linux-gnu.so
 
 Tarball:
 	tar cfz app_root-${PYTHON_VERSION}.tgz app_root
