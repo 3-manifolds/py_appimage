@@ -1,0 +1,18 @@
+--- a/Lib/_pyrepl/main.py	2025-01-06 13:21:45.084309344 -0600
++++ b/Lib/_pyrepl/main.py	2025-01-06 13:22:14.348891718 -0600
+@@ -15,7 +15,14 @@
+         raise RuntimeError(err)
+ except Exception as e:
+     CAN_USE_PYREPL = False
+-    FAIL_REASON = f"warning: can't use pyrepl: {e}"
++    if sys.platform == 'linux':
++        try:
++            import _curses
++            FAIL_REASON = f"warning: can't use pyrepl: {e}"
++        except:
++            FAIL_REASON = "warning: can't use pyrepl: curses is not available."
++    else:
++        FAIL_REASON = f"warning: can't use pyrepl: {e}"
+ else:
+     CAN_USE_PYREPL = True
+     FAIL_REASON = ""
