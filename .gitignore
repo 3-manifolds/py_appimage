@@ -8,4 +8,4 @@ Sqlite/sqlite-*
 TclTk/Tcl
 TclTk/Tk
 Python/Python-*
-app_root
+app_root*
