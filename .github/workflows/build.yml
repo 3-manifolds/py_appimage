@@ -13,11 +13,13 @@ jobs:
 
       - name: Build docker image
         run: |
-          bash ./docker/build_docker_image.sh
+	  cd docker
+          bash build_docker_image.sh
 
       - name: Build app_root on docker
         run: |
-          bash ./docker/build_app_root.sh
+	  cd docker
+          bash build_app_root.sh
 
       - uses: actions/upload-artifact@v4
         with:
