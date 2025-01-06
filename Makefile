@@ -41,7 +41,12 @@ DockerFix:
 	cp /usr/lib64/libeditline.so.1.0.2 app_root/lib64
 	ln -s libeditline.so.1.0.2 app_root/lib64/libeditline.so.1
 	ln -s libeditline.so.1.0.2 app_root/lib64/libeditline.so
+	cp /usr/lib64/libedit.so.0.0.42 app_root/lib64
+	patchelf --add-rpath '$$ORIGIN' app_root/lib64/libedit.so.0.0.42
+	ln -s libedit.so.0.0.42 app_root/lib64/libedit.so.0
+	ln -s libedit.so.0.0.42 app_root/lib64/libedit.so
 	patchelf --add-rpath '$$ORIGIN/../..' app_root/lib/python3.13/lib-dynload/_curses.cpython-313-x86_64-linux-gnu.so
+	patchelf --add-rpath '$$ORIGIN/../..' app_root/lib/python3.13/lib-dynload/readline.cpython-313-x86_64-linux-gnu.so
 
 Tarball:
 	tar cfz app_root-${PYTHON_VERSION}.tgz app_root
