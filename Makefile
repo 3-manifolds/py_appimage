@@ -30,6 +30,7 @@ Smaller:
 	rm -rf app_root/share/man
 
 DockerFix:
+	cp -rp /usr/share/terminfo app_root/share
 	cp /usr/lib64/libncursesw.so.5.9 app_root/lib64
 	ln -s libncursesw.so.5.9 app_root/lib64/libncursesw.so
 	ln -s libncursesw.so.5.9 app_root/lib/libncursesw.so.5
