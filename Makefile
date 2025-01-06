@@ -29,6 +29,9 @@ Smaller:
 	rm -f app_root/bin/idle*
 	rm -rf app_root/share/man
 
+# This does not work well enough to provide a readline module.
+# Currently we disable the readline module when configuring Python.
+
 DockerFix:
 	cp -rp /usr/share/terminfo app_root/share
 	cp /usr/lib64/libncursesw.so.5.9 app_root/lib64

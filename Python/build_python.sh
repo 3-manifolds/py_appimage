@@ -30,6 +30,7 @@ if ! [ -d ${SRC_DIR} ]; then
     tar xfz ${SRC_ARCHIVE}
     cd ${SRC_DIR}
     patch -p1 < ../patches/tkinter.patch
+    patch -p1 < ../patches/pyrepl.patch
     cd ..
 fi
 if ! [ -d dist ]; then
