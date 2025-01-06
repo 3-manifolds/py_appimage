@@ -1,6 +1,6 @@
 PYTHON_VERSION=3.13
 
-all: Setup OpenSSL TclTk Sqlite Python Smaller DockerFix
+all: Setup OpenSSL TclTk Sqlite Python Smaller
 
 .PHONY: Setup OpenSSL TclTk Sqlite Python Smaller DockerFix Tarball 
 
@@ -27,7 +27,7 @@ Smaller:
 	rm -f app_root/lib/python3.13/lib-dynload/_test*
 	rm -rf app_root/lib/python3.13/idlelib
 	rm -f app_root/bin/idle*
-	rm -rf app_root/share
+	rm -rf app_root/share/man
 
 DockerFix:
 	cp /usr/lib64/libncursesw.so.5.9 app_root/lib64
