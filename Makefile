@@ -32,11 +32,15 @@ Smaller:
 DockerFix:
 	cp -rp /usr/share/terminfo app_root/share
 	cp /usr/lib64/libncursesw.so.5.9 app_root/lib64
+	patchelf --add-rpath '$$ORIGIN' app_root/lib64/libncursesw.so.5.9
 	ln -s libncursesw.so.5.9 app_root/lib64/libncursesw.so
 	ln -s libncursesw.so.5.9 app_root/lib/libncursesw.so.5
 	cp /usr/lib64/libtinfo.so.5.9 app_root/lib64
 	ln -s libtinfo.so.5.9 app_root/lib64/libtinfo.so.5
 	ln -s libtinfo.so.5.9 app_root/lib64/libtinfo.so
+	cp /usr/lib64/libeditline.so.1.0.2 app_root/lib64
+	ln -s libeditline.so.1.0.2 app_root/lib64/libeditline.so.1
+	ln -s libeditline.so.1.0.2 app_root/lib64/libeditline.so
 	patchelf --add-rpath '$$ORIGIN/../..' app_root/lib/python3.13/lib-dynload/_curses.cpython-313-x86_64-linux-gnu.so
 
 Tarball:

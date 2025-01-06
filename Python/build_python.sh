@@ -51,7 +51,8 @@ export TCLTK_LIBS="${PREFIX}/lib/${TCL_LIB} ${PREFIX}/lib/${TK_LIB}"
     LDFLAGS=-L${PREFIX}/lib \
     CPPFLAGS=-I${PREFIX}/include \
     --prefix=${PREFIX} --with-openssl=${PREFIX} \
-    --with-openssl-rpath=${PREFIX}/lib 
+    --with-openssl-rpath=${PREFIX}/lib \
+    --with-readline=editline
 	    
 make -j4
 make install
