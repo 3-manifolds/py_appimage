@@ -16,7 +16,7 @@ jobs:
           cd docker
           bash build_docker_image.sh
 
-      - name: Build app_root on docker
+      - name: Build root directory on docker
         run: |
           cd docker
           bash build_app_root.sh
