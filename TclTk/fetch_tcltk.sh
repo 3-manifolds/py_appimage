@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-TCL_VERSION=9.0.1
-TK_VERSION=9.0.1
+TCL_VERSION=9.0.3
+TK_VERSION=9.0.3
 
 TCL_TARBALL=tcl-core${TCL_VERSION}-src.tar.gz
 TK_TARBALL=tk${TK_VERSION}-src.tar.gz
