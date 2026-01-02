@@ -11,6 +11,8 @@ Setup:
 
 OpenSSL:
 	bash OpenSSL/build_openssl.sh
+	patchelf --add-rpath '$$ORIGIN' app_root/lib/libssl.so
+	patchelf --add-rpath '$$ORIGIN/../lib' app_root/bin/openssl
 
 TclTk:
 	bash TclTk/build_tcltk.sh

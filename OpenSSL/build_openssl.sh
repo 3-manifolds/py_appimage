@@ -25,10 +25,9 @@ if [ -e Makefile ]; then
     make distclean
 fi
 ./Configure --prefix=${PREFIX}
-make -j4 install_runtime
-make -j4 install_programs
-make -j4 install_ssldirs
-make -j4 install_dev
-patchelf --add-rpath '$ORIGIN/../lib64' $PREFIX/bin/openssl
-rm $PREFIX/bin/c_rehash
+make -j4
+make install_runtime
+make install_programs
+make install_ssldirs
+make install_dev
 popd

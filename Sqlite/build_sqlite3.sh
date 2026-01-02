@@ -2,12 +2,12 @@ set -e
 PREFIX=`pwd`/app_root
 PREFIX=`realpath $PREFIX`
 cd `dirname $0`
-VERSION=3.47.2
-VN=3470200
+VERSION=3.51.1
+VN=3510100
 SRC_DIR=sqlite-autoconf-${VN}
 SRC_ARCHIVE=${SRC_DIR}.tar.gz
-URL=https://www.sqlite.org/2024/${SRC_ARCHIVE}
-HASH=f1b2ee412c28d7472bc95ba996368d6f0cdcf00362affdadb27ed286c179540b
+URL=https://sqlite.org/2025/sqlite-autoconf-${VN}.tar.gz
+HASH=4f2445cd70479724d32ad015ec7fd37fbb6f6130013bd4bfbc80c32beb42b7e0
 
 if ! [ -e ${SRC_ARCHIVE} ]; then
     curl -L -O ${URL}
