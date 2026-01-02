@@ -4,7 +4,7 @@ docker exec -w /tmp app_root_builder git clone https://github.com/3-manifolds/py
 docker exec -w /tmp app_root_builder make -C py_appimage
 #docker exec -w /tmp app_root_builder make -C py_appimage DockerFix
 docker exec -w /tmp app_root_builder make -C py_appimage Tarball
-docker cp app_root_builder:/tmp/py_appimage/app_root-3.13.tgz .
-docker cp app_root_builder:/tmp/py_appimage/app_root-3.13.sha256 .
+docker cp app_root_builder:/tmp/py_appimage/app_root-3.14.tgz .
+docker cp app_root_builder:/tmp/py_appimage/app_root-3.14.sha256 .
 docker stop app_root_builder
 docker container rm app_root_builder

@@ -1,6 +1,6 @@
-diff -ru Orig/Lib/test/test_tkinter/test_misc.py Python-3.13.1/Lib/test/test_tkinter/test_misc.py
+diff -ru Orig/Lib/test/test_tkinter/test_misc.py Python-3.14.2/Lib/test/test_tkinter/test_misc.py
 --- Orig/Lib/test/test_tkinter/test_misc.py	2024-12-03 11:59:52
-+++ Python-3.13.1/Lib/test/test_tkinter/test_misc.py	2024-12-12 12:57:15
++++ Python-3.14.2/Lib/test/test_tkinter/test_misc.py	2024-12-12 12:57:15
 @@ -66,9 +66,10 @@
          f.tk_busy_forget()
          self.assertFalse(f.tk_busy_status())
@@ -24,9 +24,9 @@ diff -ru Orig/Lib/test/test_tkinter/test_misc.py Python-3.13.1/Lib/test/test_tki
              f.tk_busy_cget('cursor')
  
      def test_tk_setPalette(self):
-diff -ru Orig/Lib/test/test_tkinter/test_widgets.py Python-3.13.1/Lib/test/test_tkinter/test_widgets.py
+diff -ru Orig/Lib/test/test_tkinter/test_widgets.py Python-3.14.2/Lib/test/test_tkinter/test_widgets.py
 --- Orig/Lib/test/test_tkinter/test_widgets.py	2024-12-03 11:59:52
-+++ Python-3.13.1/Lib/test/test_tkinter/test_widgets.py	2024-12-12 12:57:15
++++ Python-3.14.2/Lib/test/test_tkinter/test_widgets.py	2024-12-12 12:57:15
 @@ -7,9 +7,13 @@
  from test.test_tkinter.support import (requires_tk, tk_version,
                                    get_tk_patchlevel, widget_eq,
@@ -491,9 +491,9 @@ diff -ru Orig/Lib/test/test_tkinter/test_widgets.py Python-3.13.1/Lib/test/test_
          self.checkParam(widget, 'pady', -2, expected=expected)
  
      def test_configure_width(self):
-diff -ru Orig/Lib/test/test_tkinter/widget_tests.py Python-3.13.1/Lib/test/test_tkinter/widget_tests.py
+diff -ru Orig/Lib/test/test_tkinter/widget_tests.py Python-3.14.2/Lib/test/test_tkinter/widget_tests.py
 --- Orig/Lib/test/test_tkinter/widget_tests.py	2024-12-03 11:59:52
-+++ Python-3.13.1/Lib/test/test_tkinter/widget_tests.py	2024-12-12 12:57:15
++++ Python-3.14.2/Lib/test/test_tkinter/widget_tests.py	2024-12-12 12:57:15
 @@ -6,17 +6,16 @@
                                    pixels_conv, tcl_obj_eq)
  import test.support
@@ -791,9 +791,9 @@ diff -ru Orig/Lib/test/test_tkinter/widget_tests.py Python-3.13.1/Lib/test/test_
      # This decorator adds test_configure_xxx methods from source classes for
      # every xxx option in the OPTIONS class attribute if they are not defined
      # explicitly.
-diff -ru Orig/Lib/test/test_ttk/test_style.py Python-3.13.1/Lib/test/test_ttk/test_style.py
+diff -ru Orig/Lib/test/test_ttk/test_style.py Python-3.14.2/Lib/test/test_ttk/test_style.py
 --- Orig/Lib/test/test_ttk/test_style.py	2024-12-03 11:59:52
-+++ Python-3.13.1/Lib/test/test_ttk/test_style.py	2024-12-12 12:57:15
++++ Python-3.14.2/Lib/test/test_ttk/test_style.py	2024-12-12 12:57:15
 @@ -205,7 +205,8 @@
          style = self.style
          with self.assertRaises(IndexError):
@@ -804,9 +804,9 @@ diff -ru Orig/Lib/test/test_ttk/test_style.py Python-3.13.1/Lib/test/test_ttk/te
              style.element_create('plain.newelem', 'from', 'spam')
  
      def test_element_create_image(self):
-diff -ru Orig/Lib/test/test_ttk/test_widgets.py Python-3.13.1/Lib/test/test_ttk/test_widgets.py
+diff -ru Orig/Lib/test/test_ttk/test_widgets.py Python-3.14.2/Lib/test/test_ttk/test_widgets.py
 --- Orig/Lib/test/test_ttk/test_widgets.py	2024-12-03 11:59:52
-+++ Python-3.13.1/Lib/test/test_ttk/test_widgets.py	2024-12-12 13:00:29
++++ Python-3.14.2/Lib/test/test_ttk/test_widgets.py	2024-12-12 13:00:29
 @@ -8,7 +8,7 @@
  from test.test_tkinter.support import (
      AbstractTkTest, requires_tk, tk_version, get_tk_patchlevel,
@@ -1153,9 +1153,9 @@ diff -ru Orig/Lib/test/test_ttk/test_widgets.py Python-3.13.1/Lib/test/test_ttk/
  
      def create(self, **kwargs):
          return ttk.Sizegrip(self.root, **kwargs)
-diff -ru Orig/Lib/tkinter/ttk.py Python-3.13.1/Lib/tkinter/ttk.py
+diff -ru Orig/Lib/tkinter/ttk.py Python-3.14.2/Lib/tkinter/ttk.py
 --- Orig/Lib/tkinter/ttk.py	2024-12-03 11:59:52
-+++ Python-3.13.1/Lib/tkinter/ttk.py	2024-12-12 12:57:15
++++ Python-3.14.2/Lib/tkinter/ttk.py	2024-12-12 12:57:15
 @@ -321,6 +321,8 @@
      elif hasattr(val, 'typename'): # some other (single) Tcl object
          val = _convert_stringval(val)
@@ -1165,9 +1165,9 @@ diff -ru Orig/Lib/tkinter/ttk.py Python-3.13.1/Lib/tkinter/ttk.py
      return val
  
  def tclobjs_to_py(adict):
-diff -ru Orig/Modules/_tkinter.c Python-3.13.1/Modules/_tkinter.c
+diff -ru Orig/Modules/_tkinter.c Python-3.14.2/Modules/_tkinter.c
 --- Orig/Modules/_tkinter.c	2024-12-03 11:59:52
-+++ Python-3.13.1/Modules/_tkinter.c	2024-12-12 12:57:15
++++ Python-3.14.2/Modules/_tkinter.c	2024-12-12 12:57:15
 @@ -325,6 +325,7 @@
      const Tcl_ObjType *ListType;
      const Tcl_ObjType *StringType;
