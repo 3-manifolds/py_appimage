@@ -1,3 +1,4 @@
+set -e
 PREFIX=`pwd`/app_root
 PREFIX=`realpath $PREFIX`
 cd `dirname $0`

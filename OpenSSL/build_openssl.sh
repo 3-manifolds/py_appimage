@@ -1,12 +1,13 @@
+set -e
 PREFIX=`pwd`/app_root
 PREFIX=`realpath $PREFIX`
 cd `dirname $0`
-VERSION=3.4
-LONG_VERSION=3.4.0
+VERSION=3.6
+LONG_VERSION=3.6.0
 SRC_DIR=openssl-${LONG_VERSION}
 SRC_ARCHIVE=openssl-${LONG_VERSION}.tar.gz
 URL=https://github.com/openssl/openssl/releases/download/openssl-${LONG_VERSION}/openssl-${LONG_VERSION}.tar.gz
-HASH=e15dda82fe2fe8139dc2ac21a36d4ca01d5313c75f99f46c4e8a27709b7294bf
+HASH=b6a5f44b7eb69e3fa35dbf15524405b44837a481d43d81daddde3ff21fcbb8e9
 
 if ! [ -e ${SRC_ARCHIVE} ]; then
     curl -L -O ${URL}
